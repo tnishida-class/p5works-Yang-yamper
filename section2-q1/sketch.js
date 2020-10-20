@@ -1,5 +1,6 @@
 // 小手調べ
 function setup() {
+  
   createCanvas(100,100);
   stroke(255, 0, 0);
   for(let i = 0; i < 5; i++){
