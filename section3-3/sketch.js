@@ -1,16 +1,9 @@
 // テキスト「関数を作る(2) 値を戻す関数」～「総仕上げ：カレンダーを描画しよう」
 function setup(){
   createCanvas(200, 200);
-  calendar(2019, 10);
+  text(daysInYear(2000),100,100)
+  text(dayOfWeek(1970,1,1),150,100)
 
-  for(let i = 2000; i <= 2100; i++){
-    if(isLeapYear(i)){
-      console.log(i + "年はうるう年です");
-    }
-    else{
-      console.log(i + "年はうるう年ではありません");
-    }
-  }
 }
 
 function calendar(y, m){
@@ -25,7 +18,7 @@ function isLeapYear(y){
 }
 
 function daysInYear(y){
-  // BLANK[1]
+  return isLeapYear(y) ? 366 : 365
 }
 
 function daysInMonth(y, m){
@@ -49,7 +42,31 @@ function dayOfYear(y, m, d){
 }
 
 function dayOfWeek(y, m, d){
-  // BLANK[2]
+  let count = 0;
+  for(let i = 1; i < d ; i++){
+    count += dayOfYear(y ,m ,i)
+  }
+ if (count % 7 == 0){
+   return 4
+ }
+else if (count % 7 == 1){
+   return 5
+ }
+else if (count % 7 == 2){
+   return 6
+ }
+else if (count % 7 == 3){
+   return 0
+ }
+else if (count % 7 == 4){
+   return 1
+ }
+else if (count % 7 == 5){
+   return 2
+ }
+else if (count % 7 == 6){
+   return 3
+ }
 }
 
 function dayOfWeekAsString(dow){
