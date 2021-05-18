@@ -44,7 +44,7 @@ function star(cx, cy, r){
   endShape(CLOSE);
   pop();
   p -= 8
-  q += 8
+  q += 9
 }
 
 function mouseWheel(){
@@ -57,7 +57,7 @@ function mouseWheel(){
     balls.push(b);
 }
 
-function mouseClicked(){
+function mouseDragged(){
   p = mouseX
   q = mouseY
 }
